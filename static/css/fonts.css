@@ -5,9 +5,9 @@ blockquote {
   font-family: "Times New Roman", serif;
 }
 code {
-  font-family: Courier, monospace;
+  font-family: monospace;
 }
 pre code {
-  font-family: Courier, monospace;
+  font-family: monospace;
   font-size: .85em;
 }
