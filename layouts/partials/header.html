@@ -28,13 +28,6 @@
         <span><a href="{{ . }}{{ $.Scratch.Get "FilePath" }}">{{ (default "Edit this page" $.Site.Params.text.edit) | safeHTML }}</a></span>
         {{ end }}
         {{ end }}
-      {{ else }}
-        <span>{{ $.Scratch.Get "Title" }}</span>
-        <span>{{ now.Format "2006-01-02" }}</span>
-        {{ $pages := .Pages }}
-        {{ if .IsHome }}{{ $pages = .Site.RegularPages }}{{ end }}
-        {{ $paginator := .Paginate (where $pages "Section" "!=" "") }}
-        <span>{{ with $paginator }}{{ if .TotalPages }}{{ .PageNumber }} / {{ .TotalPages }}{{ end }}{{ end }}</span>
       {{ end }}
       </div>
     </nav>
