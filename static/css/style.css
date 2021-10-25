@@ -83,7 +83,7 @@ article { padding: 1em; }
 .pagination { text-align: center; }
 .pagination li { display: inline; }
 .pagination a { padding: 0 .2em; }
-.pagination a:link, a:visited { color: blue; }
+.pagination a:link, .pagination a:visited { color: blue; }
 .footer {
   background: #666;
   padding: 1em 0;
