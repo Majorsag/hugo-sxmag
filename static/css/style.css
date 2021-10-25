@@ -84,6 +84,7 @@ article { padding: 1em; }
 .pagination li { display: inline; }
 .pagination a { padding: 0 .2em; }
 .pagination a:link, .pagination a:visited { color: blue; }
+.active a { text-decoration: none; color: black !important; }
 .footer {
   background: #666;
   padding: 1em 0;
