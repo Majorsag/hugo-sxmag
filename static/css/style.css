@@ -77,12 +77,11 @@ article { padding: 1em; }
   border-radius: 5px;
 }
 .menu, .article-meta, footer, .post-nav { text-align: center; }
-.article-footer { text-align: left; }
 .title { font-size: 1.2em; }
 .article-list h1, .title { line-height: 1.2em; }
-.article-list a, .header a, footer a, .categories a, .active a, .comments a { text-decoration: none; }
+.article-list a, .header a, footer a, .categories a, .active a { text-decoration: none; }
 .pagination { text-align: center; }
-.pagination li, .terms li { display: inline; }
+.pagination li { display: inline; }
 .pagination a { padding: 0 .2em; }
 .footer {
   background: #666;
@@ -124,6 +123,11 @@ pre code {
 
 /* misc elements */
 img, iframe, video { max-width: 100%; }
+.page img {
+  margin: auto;
+  display: block;
+}
+
 blockquote {
   background: #f9f9f9;
   border-left: 5px solid #ccc;
@@ -136,7 +140,7 @@ table {
   border-bottom: 1px solid #666;
 }
 table thead th { border-bottom: 1px solid #ddd; }
-th, td { padding: 5px; }
+th, td { padding: 3px; }
 tr:nth-child(even) { background: #eee }
 
 .thumbnail {
@@ -152,17 +156,11 @@ tr:nth-child(even) { background: #eee }
   height: 100%;
   object-fit: cover;
 }
-#TableOfContents, #TOC, .comments {
+
+#TableOfContents {
   border: 1px solid #eee;
   border-radius: 5px;
 }
-.comments a {
-  display: inline-block;
-  width: 100%;
-  text-align: center;
-  font-size: 1.2em;
-}
-.terms { padding-left: 0; }
 .post-nav {
   margin: .5em 0;
   display: flex;
