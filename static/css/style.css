@@ -79,17 +79,17 @@ article { padding: 1em; }
 .menu, .article-meta, footer, .post-nav { text-align: center; }
 .title { font-size: 1.2em; }
 .article-list h1, .title { line-height: 1.2em; }
-.article-list a, .header a, footer a, .categories a { text-decoration: none; }
+.article-list a, .header a, footer a, menu a, .categories a { text-decoration: none; }
 .pagination { text-align: center; }
 .pagination li { display: inline; }
 .pagination a { padding: 0 .2em; }
 .pagination a:link, .pagination a:visited { color: blue; }
 .active a { text-decoration: none; color: black !important; }
-.footer {
+.footer, .menu {
   background: #666;
   padding: 1em 0;
 }
-.footer, .footer a { color: #fff; }
+.footer, .footer a, .menu, .menu a { color: #fff; }
 .copyright, .copyright a { color: #ccc; }
 .menu {
   margin-bottom: .5em;
