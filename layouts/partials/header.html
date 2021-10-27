@@ -13,6 +13,11 @@
     <nav class="header">
       {{ partial "banner.html" . }}
       <div class="head-meta">
+      <ul class="menu">
+        {{ range .Site.Menus.main }}
+        <li><a href="{{ .URL | relURL }}"><span data-hover="{{ .Name }}">{{ .Name }}</span></a></li>
+        {{ end }}
+      </ul>
       {{ if .IsPage }}
         <span><a href="{{ relURL .Site.BaseURL }}">{{ (default "Back to Home" .Site.Params.text.back) | safeHTML }}</a></span>
         {{ if .Params.date }}<span class="date">{{ .Date.Format "2006-01-02" }}</span>{{ end }}
@@ -30,9 +35,4 @@
         {{ end }}
       {{ end }}
       </div>
-      <ul class="menu">
-        {{ range .Site.Menus.main }}
-        <li><a href="{{ .URL | relURL }}"><span data-hover="{{ .Name }}">{{ .Name }}</span></a></li>
-        {{ end }}
-      </ul>
     </nav>
