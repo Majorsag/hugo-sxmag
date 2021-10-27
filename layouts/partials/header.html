@@ -29,12 +29,10 @@
         {{ end }}
         {{ end }}
       {{ end }}
+      </div>
       <ul class="menu">
         {{ range .Site.Menus.main }}
         <li><a href="{{ .URL | relURL }}"><span data-hover="{{ .Name }}">{{ .Name }}</span></a></li>
         {{ end }}
       </ul>
-  </ul>
-
-      </div>
     </nav>
