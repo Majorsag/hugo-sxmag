@@ -3,12 +3,12 @@ body {
   line-height: 1.5em;
   background: #fafafa;
 }
-.header div, .container, .copyright, .menu {
+.header div, .container, .copyright, .menu ul {
   max-width: 1100px;
   margin: auto;
   padding: 0 15px;
 }
-.page .header div, .page .container, .page .copyright, .page .menu { max-width: 900px; }
+.page .header div, .page .container, .page .copyright, .page .menu ul { max-width: 900px; }
 .container { hyphens: auto; }
 @media (max-width: 930px) {
   .page .container { padding: 0; }
@@ -17,12 +17,11 @@ main { margin-bottom: 15px; }
 
 /* header and footer areas */
 .header {
-  border-top: 5px solid #666;
   border-bottom: 4px double #666;
   text-align: center;
   padding: 15px 0 5px;
 }
-.head-meta, .menu {
+.head-meta, .menu ul {
   display: flex;
   justify-content: space-between;
 }
@@ -76,7 +75,7 @@ article { padding: 1em; }
   padding: 5px;
   border-radius: 5px;
 }
-.menu, .article-meta, footer, .post-nav { text-align: center; }
+.menu ul, .article-meta, footer, .post-nav { text-align: center; }
 .title { font-size: 1.2em; }
 .article-list h1, .title { line-height: 1.2em; }
 .article-list a, .header a, footer a, menu a, .categories a { text-decoration: none; }
@@ -85,13 +84,14 @@ article { padding: 1em; }
 .pagination a { padding: 0 .2em; }
 .pagination a:link, .pagination a:visited { color: blue; }
 .active a { text-decoration: none; color: black !important; }
-.footer, .menu {
+.footer, .menu ul {
   background: #666;
   padding: 1em 0;
 }
-.footer, .footer a, .menu, .menu a { color: #fff; }
+.footer, .footer a, .menu ul, .menu a { color: #fff; }
 .copyright, .copyright a { color: #ccc; }
-.menu {
+.menu { background: #666; }
+.menu ul {
   margin-bottom: .5em;
   flex-wrap: wrap;
 }
