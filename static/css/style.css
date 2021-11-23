@@ -30,6 +30,7 @@ main { margin-bottom: 15px; }
 .banner .text {
   display: block;
   line-height: 1em;
+  padding-bottom: 15px;
 }
 .list {
   display: flex;
