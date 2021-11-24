@@ -23,12 +23,14 @@
   </div>
   <div class="summary">
     <a href="{{ .RelPermalink }}">
+    {{ $url := .RelPermalink }}
     {{ with .Params.thumbnail }}
-    <div class="thumbnail"><img src="{{ relURL . }}" alt="Thumbnail" /></div>
+    <div class="thumbnail"><img src="{{ path.Join $url (relURL .) }}" alt="Thumbnail" /></div>
     {{ else }}
     {{ $img := findRE "<img src=\"[^\"]+\"" .Content 1 }}
     {{ range $img }}
-    <div class="thumbnail">{{ (print . " alt=\"Thumbnail\" />") | safeHTML }}</div>
+    {{ $img := replaceRE "<img src=\"" "" . }}
+    <div class="thumbnail">{{ (print "<img src=\"" $url $img " alt=\"Thumbnail\" />") | safeHTML }}</div>
     {{ end }}
     {{ end }}
     {{ with .Description }}
