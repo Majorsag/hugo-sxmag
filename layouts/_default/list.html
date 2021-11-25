@@ -8,13 +8,7 @@
 {{ range $paginator.Pages }}
 <section class="article-list">
   <div class="categories">
-  {{ with .Params.categories }}
-  {{ range first 1 . }}
-    <a href="{{ relURL (print "/categories/" . | urlize) }}">{{ . }}</a>
-  {{ end }}
-  {{ else }}
-    <a>{{ default "Uncategorized" .Site.Params.text.uncategorized }}</a>
-  {{ end }}
+    <a href="{{ relURL (print .Type | urlize) }}">{{ .Type }}</a>
   </div>
   <h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
   <div class="date-author">
