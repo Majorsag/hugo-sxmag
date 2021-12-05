@@ -14,8 +14,14 @@
       {{ partial "banner.html" . }}
       <nav class="menu">
         <ul>
+          {{ $url := .RelPermalink | relURL }}
           {{ range .Site.Menus.main }}
-          <li><a href="{{ .URL | relURL }}"><span data-hover="{{ .Name }}">{{ .Name }}</span></a></li>
+	    {{ $menu_url := .URL | relURL }}
+	    {{ if eq $url $menu_url }}
+              <li class="current-menu"><a href="{{ .URL | relURL }}"><span data-hover="{{ .Name }}">{{ .Name }}</span></a></li>
+	    {{ else }}
+            <li><a href="{{ .URL | relURL }}"><span data-hover="{{ .Name }}">{{ .Name }}</span></a></li>
+	    {{ end }}
           {{ end }}
         </ul>
       </nav>

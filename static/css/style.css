@@ -101,7 +101,7 @@ article { padding: 1em; }
   font-weight: bolder;
 }
 .menu a { padding: .5em; }
-.menu a:hover {
+.menu a:hover, .current-menu a {
   color: #000;
   background: #fff;
 }
