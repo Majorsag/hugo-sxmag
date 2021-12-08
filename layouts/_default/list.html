@@ -6,7 +6,7 @@
 {{ if .IsHome }}{{ $pages = .Site.RegularPages }}{{ end }}
 {{ $paginator := .Paginate (where $pages "Section" "!=" "") }}
 {{ range $paginator.Pages }}
-<section class="article-list">
+<section class="article-list {{ replaceRE " " "-" .Type }}">
   <div class="categories">
     <a href="{{ relURL (print .Type | urlize) }}">{{ .Type }}</a>
   </div>
