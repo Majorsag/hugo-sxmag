@@ -1,6 +1,6 @@
 <footer>
 <div class="footer">
-  {{ with .Site.Params.footer }}
+  {{ with .Site.Copyright }}
   <div class="copyright">{{ . | markdownify }}</div>
   {{ end }}
 </div>
