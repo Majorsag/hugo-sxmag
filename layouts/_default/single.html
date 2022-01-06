@@ -3,14 +3,20 @@
 <article>
 <div class="article-meta">
 
+  {{ if eq .Type "page" }}{{else}}
   <div class="categories">
     <a href="{{ relURL (print .Type | urlize) }}">{{ .Type }}</a>
   </div>
+  {{ end }}
 
   <h1><span class="title">{{ .Title }}</span></h1>
 
   {{ if .Params.author }}
   <h3 class="author">{{ partial "author_names.html" . }}</h3>
+  {{ end }}
+
+  {{ if .Params.summary }}
+  <p class="summary">{{ .Params.summary }}</p>
   {{ end }}
 
 </div>
