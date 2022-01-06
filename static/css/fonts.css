@@ -1,18 +1,129 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap');
-.banner .text {
-	font-family: "Roboto Slab", serif;
+/* Roboto Slab */
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 700;
+  src: local(''),
+       url('../fonts/roboto-slab-700.woff2') format('woff2'),
+       url('../fonts/roboto-slab-700.woff') format('woff');
 }
 
+/* Arimo */
+@font-face {
+  font-family: 'Arimo';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Arimo'),
+       url('../fonts/arimo-regular.woff2') format('woff2'),
+       url('../fonts/arimo-regular.woff') format('woff');
+}
+@font-face {
+  font-family: 'Arimo';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Arimo Bold'),
+       url('../fonts/arimo-700.woff2') format('woff2'),
+       url('../fonts/arimo-700.woff') format('woff');
+}
+@font-face {
+  font-family: 'Arimo';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Arimo Italic'),
+       url('../fonts/arimo-italic.woff2') format('woff2'),
+       url('../fonts/arimo-italic.woff') format('woff');
+}
+@font-face {
+  font-family: 'Arimo';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Arimo Bold Italic'),
+       url('../fonts/arimo-700italic.woff2') format('woff2'),
+       url('../fonts/arimo-700italic.woff') format('woff');
+}
+
+/* Tinos */
+@font-face {
+  font-family: 'Tinos';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Tinos'),
+       url('../fonts/tinos-regular.woff2') format('woff2'),
+       url('../fonts/tinos-regular.woff') format('woff');
+}
+@font-face {
+  font-family: 'Tinos';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Tinos Italic'),
+       url('../fonts/tinos-italic.woff2') format('woff2'),
+       url('../fonts/tinos-italic.woff') format('woff');
+}
+@font-face {
+  font-family: 'Tinos';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Tinos Bold'),
+       url('../fonts/tinos-700.woff2') format('woff2'),
+       url('../fonts/tinos-700.woff') format('woff');
+}
+@font-face {
+  font-family: 'Tinos';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Tinos Bold Italic'),
+       url('../fonts/tinos-700italic.woff2') format('woff2'),
+       url('../fonts/tinos-700italic.woff') format('woff');
+}
+
+/* Cousine */
+@font-face {
+  font-family: 'Cousine';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+       url('../fonts/cousine-regular.woff2') format('woff2'),
+       url('../fonts/cousine-regular.woff') format('woff');
+}
+@font-face {
+  font-family: 'Cousine';
+  font-style: italic;
+  font-weight: 400;
+  src: local(''),
+       url('../fonts/cousine-italic.woff2') format('woff2'),
+       url('../fonts/cousine-italic.woff') format('woff');
+}
+@font-face {
+  font-family: 'Cousine';
+  font-style: italic;
+  font-weight: 700;
+  src: local(''),
+       url('../fonts/cousine-700italic.woff2') format('woff2'),
+       url('../fonts/cousine-700italic.woff') format('woff');
+}
+@font-face {
+  font-family: 'Cousine';
+  font-style: normal;
+  font-weight: 700;
+  src: local(''),
+       url('../fonts/cousine-700.woff2') format('woff2'),
+       url('../fonts/cousine-700.woff') format('woff');
+}
+
+
+
+.banner .text {
+  font-family: 'Roboto Slab', serif;
+}
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Arimo', sans-serif;
 }
 blockquote {
-  font-family: "Times New Roman", serif;
+  font-family: 'Tinos', serif;
 }
 code {
-  font-family: monospace;
+  font-family: 'Cousine', monospace;
 }
 pre code {
-  font-family: monospace;
-  font-size: .85em;
+  font-family: 'Cousine', monospace;
 }

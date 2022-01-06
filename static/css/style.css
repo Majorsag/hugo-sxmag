@@ -106,7 +106,6 @@ article { padding: 1em; }
 
 .footer { background: #666; padding: 1em 0; }
 .footer, .footer a, .menu ul, .menu a { color: #fff; }
-.copyright, .copyright a { color: #ccc; }
 .menu { background: #666; }
 .menu ul {
   margin-bottom: .5em;
@@ -180,3 +179,11 @@ tr:nth-child(even) { background: #eee }
   width: 50%;
   margin-left: 0;
 }
+
+figcaption {
+	background-color: #999;
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+figcaption h4, figcaption p { margin: 0; }
