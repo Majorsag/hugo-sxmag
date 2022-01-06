@@ -5,8 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{ $.Scratch.Set "Title" (default .Title (index .Site.Params.text (print "title_" (lower .Title)))) }}
     <title>{{ if eq ($.Scratch.Get "Title") .Site.Title }}{{ .Site.Title }}{{ else }}{{ ($.Scratch.Get "Title") }} | {{ .Site.Title }}{{ end }}</title>
+    {{ with .OutputFormats.Get "rss" -}}
+    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+    {{ end -}}
     <link rel="stylesheet" href="{{ "/css/style.css" | relURL }}" />
     <link rel="stylesheet" href="{{ "/css/fonts.css" | relURL }}" />
+    {{ range .Site.Params.custom_css -}}
+    <link rel="stylesheet" href="{{ . | relURL }}" />
+    {{- end }}
   </head>
 
   <body{{if .IsPage}} class="page"{{ end }}>
@@ -14,13 +20,13 @@
       {{ partial "banner.html" . }}
       <nav class="menu">
         <ul>
-          {{ $url := .RelPermalink | relURL }}
+          {{ $url := .RelPermalink }}
           {{ range .Site.Menus.main }}
-            {{ $menu_url := .URL | relURL }}
+            {{ $menu_url := .URL }}
             {{ if eq $url $menu_url }}
-              <li class="current-menu"><a href="{{ .URL | relURL }}"><span data-hover="{{ .Name }}">{{ .Name }}</span></a></li>
+              <li class="current-menu"><a href="{{ .URL }}"><span data-hover="{{ .Name }}">{{ .Name }}</span></a></li>
             {{ else }}
-            <li><a href="{{ .URL | relURL }}"><span data-hover="{{ .Name }}">{{ .Name }}</span></a></li>
+            <li><a href="{{ .URL }}"><span data-hover="{{ .Name }}">{{ .Name }}</span></a></li>
             {{ end }}
           {{ end }}
         </ul>
@@ -28,7 +34,7 @@
       <div class="head-meta">
       {{ if .IsPage }}
         <span><a href="{{ relURL .Site.BaseURL }}">{{ (default "Back to Home" .Site.Params.text.back) | safeHTML }}</a></span>
-        {{ if .Params.date }}<span class="date">{{ .Date.Format "2006-01-02" }}</span>{{ end }}
+        {{ if .Params.date }}<span class="date">{{ .Date.Format "2006. 01. 02." }}</span>{{ end }}
         {{ if .File.Path }}
           {{ $.Scratch.Set "FilePath" .File.Path }}
           {{ $.Scratch.Set "FilePath" (replace ($.Scratch.Get "FilePath") "\\" "/") }}
