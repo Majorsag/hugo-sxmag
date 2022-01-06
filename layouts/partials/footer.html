@@ -1,6 +1,16 @@
 <footer>
 <div class="footer">
-  {{ with .Site.Copyright }}
+  {{- with .Site.Menus.footer }}
+  <nav class="footer-menu">
+    {{- range $key, $item := . }}
+      {{- if ne $key 0 }}
+        {{ $.Site.Params.footer_menu_separator | default " | " | safeHTML }}
+      {{ end }}
+      <a class="footer-menu-item" href="{{ $item.URL }}">{{ $item.Name }}</a>
+    {{ end }}
+  </nav>
+  {{ end }}
+  {{ with .Site.Params.footer }}
   <div class="copyright">{{ . | markdownify }}</div>
   {{ end }}
 </div>
