@@ -180,6 +180,10 @@ tr:nth-child(even) { background: #eee }
   margin-left: 0;
 }
 
+figure {
+	display: table;
+	margin: auto;
+}
 figcaption {
 	background-color: #999;
 	padding-left: 10px;
