@@ -1,7 +1,8 @@
 <div class="banner">
-<a href="{{ relURL .Site.BaseURL }}"{{ if not .Site.Params.banner }} class="text"{{ end }}>
-{{ with .Site.Params.banner }}
-<img src="{{ relURL .src }}" alt="{{ .alt }}" />
-{{ else }}{{ .Site.Title }}
-{{ end }}</a>
-</div>
+      <a href="{{ relURL .Site.BaseURL }}"
+      {{- if not .Site.Params.banner }} class="text"{{ end }}>
+  {{- with .Site.Params.banner }}
+      <img src="{{ relURL .src }}" alt="{{ .alt }}" />
+  {{- else }}{{ .Site.Title }}
+  {{- end }}</a>
+    </div>

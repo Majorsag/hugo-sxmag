@@ -4,13 +4,13 @@
   <nav class="footer-menu">
     {{- range $key, $item := . }}
       {{- if ne $key 0 }}
-        {{ $.Site.Params.footer_menu_separator | default " | " | safeHTML }}
-      {{ end }}
+      {{ $.Site.Params.footer_menu_separator | default " | " | safeHTML }}
+      {{- end }}
       <a class="footer-menu-item" href="{{ $item.URL }}">{{ $item.Name }}</a>
-    {{ end }}
+    {{- end }}
   </nav>
-  {{ end }}
-  {{ with .Site.Params.footer }}
+  {{- end }}
+  {{- with .Site.Params.footer }}
   <div class="copyright">{{ . | markdownify }}</div>
   {{ end }}
 </div>

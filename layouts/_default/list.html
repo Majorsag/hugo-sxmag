@@ -2,10 +2,10 @@
 
 <div class="container">
 <main class="list">
-{{ $pages := .Pages }}
-{{ if .IsHome }}{{ $pages = .Site.RegularPages }}{{ end }}
-{{ $paginator := .Paginate (where $pages "Section" "!=" "") }}
-{{ range $paginator.Pages }}
+{{- $pages := .Pages }}
+{{- if .IsHome }}{{ $pages = .Site.RegularPages }}{{ end }}
+{{- $paginator := .Paginate (where $pages "Section" "!=" "") }}
+{{- range $paginator.Pages }}
 <section class="article-list {{ replaceRE " " "-" .Type }}">
   <div class="categories">
     <a href="{{ relURL (print .Type | urlize) }}">{{ .Type }}</a>
@@ -13,26 +13,26 @@
   <h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
   <div class="date-author">
     <span class="date">{{ .Date.Format "2006. 01. 02." }}</span>
-    {{ if .Params.author }} / <span class="author">{{ partial "author_names.html" . }}</span>{{ end }}
+    {{- if .Params.author }} / <span class="author">{{- partial "author_names.html" . }}</span>{{ end }}
   </div>
   <div class="summary">
     <a href="{{ .RelPermalink }}">
-    {{ $url := .RelPermalink }}
-    {{ with .Params.thumbnail }}
-    <div class="thumbnail"><img src="{{ path.Join $url (relURL .) }}" alt="Thumbnail" /></div>
-    {{ else }}
-    {{ $img := findRE "<img src=\"[^\"]+\"" .Content 1 }}
-    {{ range $img }}
-    {{ $img := replaceRE "<img src=\"" "" . }}
-    <div class="thumbnail">{{ (print "<img src=\"" $url $img " alt=\"Thumbnail\" />") | safeHTML }}</div>
-    {{ end }}
-    {{ end }}
-    {{ with .Description }}
-      {{ $.Scratch.Set "summary" (markdownify .) }}
-    {{ else }}
-      {{ $.Scratch.Set "summary" ((delimit (findRE "(<p.*?>(.|\n)*?</p>\\s*)+" .Content) "[&hellip;] ") | plainify | truncate (default 200 .Site.Params.summary_length) (default " &hellip;" .Site.Params.text.truncated ) | replaceRE "&amp;" "&" | safeHTML) }}
-    {{ end }}
-    {{ $.Scratch.Get "summary" }}
+      {{- $url := .RelPermalink }}
+      {{- with .Params.thumbnail }}
+      <div class="thumbnail"><img src="{{ path.Join $url (relURL .) }}" alt="Thumbnail" /></div>
+      {{- else }}
+      {{- $img := findRE "<img src=\"[^\"]+\"" .Content 1 }}
+      {{- range $img }}
+      {{- $img := replaceRE "<img src=\"" "" . }}
+      <div class="thumbnail">{{ (print "<img src=\"" $url $img " alt=\"Thumbnail\" />") | safeHTML }}</div>
+      {{- end }}
+      {{- end }}
+      {{- with .Description }}
+        {{- $.Scratch.Set "summary" (markdownify .) }}
+      {{- else }}
+        {{- $.Scratch.Set "summary" ((delimit (findRE "(<p.*?>(.|\n)*?</p>\\s*)+" .Content) "[&hellip;] ") | plainify | truncate (default 200 .Site.Params.summary_length) (default " &hellip;" .Site.Params.text.truncated ) | replaceRE "&amp;" "&" | safeHTML) }}
+      {{ end }}
+      {{- $.Scratch.Get "summary" }}
     </a>
   </div>
 </section>

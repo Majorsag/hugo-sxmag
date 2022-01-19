@@ -2,34 +2,27 @@
 <div class="container {{ replaceRE " " "-" .Type }}">
 <article>
 <div class="article-meta">
-
-  {{ if eq .Type "page" }}{{else}}
+  {{- if eq .Type "page" }}{{else}}
   <div class="categories">
     <a href="{{ relURL (print .Type | urlize) }}">{{ .Type }}</a>
   </div>
-  {{ end }}
-
+  {{- end }}
   <h1><span class="title">{{ .Title }}</span></h1>
-
-  {{ if .Params.author }}
+  {{- if .Params.author }}
   <h3 class="author">{{ partial "author_names.html" . }}</h3>
-  {{ end }}
-
-  {{ if .Params.summary }}
+  {{- end }}
+  {{- if .Params.summary }}
   <p class="summary">{{ .Params.summary }}</p>
-  {{ end }}
-
+  {{- end }}
 </div>
-
-{{ if .Params.toc }}
-{{ .TableOfContents }}
-{{ end }}
-
+{{- if .Params.toc }}
+{{- .TableOfContents }}
+{{- end }}
 <main>
-{{ .Content }}
+{{ .Content -}}
 </main>
 
-{{ partial "prev_next.html" . }}
+{{- partial "prev_next.html" . -}}
 </article>
 </div>
 
