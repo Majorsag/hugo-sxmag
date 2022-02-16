@@ -12,7 +12,7 @@ body {
 }
 
 main { margin-bottom: 15px; }
-.page .header div, .page .container, .page .copyright, .page .menu ul { max-width: 900px; }
+.page .header div, .page .container, .page .copyright, .page .menu ul { max-width: 1000; }
 .container { hyphens: auto; }
 
 @media (max-width: 930px) {
